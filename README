@@ -1,0 +1,77 @@
+Multi-Sensor Activity & Injury Risk Classification Pipeline
+A machine learning pipeline for real-time human activity classification and injury risk detection using fused physiological and motion sensor data.
+
+Overview
+This project builds a multi-sensor fusion ML pipeline that classifies physical activity intensity and detects injury risk using data from IMU, heart rate, EMG, and temperature sensors. It was developed using the PAMAP2 and UCI HAR datasets and is designed to eventually run on real wearable hardware.
+
+Tasks & Models
+Notebook 01 — IMU Baseline (UCI HAR)
+Trains baseline classifiers on the UCI HAR dataset for binary injury risk detection.
+
+Dataset: UCI HAR (561 hand-engineered IMU features, 6 activity classes)
+Label strategy: Activity-ID based → data-driven (motion intensity score)
+Models: Logistic Regression, Random Forest, SVM (RBF kernel)
+Evaluation: Confusion matrix, F1, Recall, ROC-AUC, 5-fold cross-validation
+
+Results (data-driven risk labels):
+Model                  F1 (risk=1)   Recall      AUC    
+Logistic Regression       0.969      0.984     ~0.999
+Random Forest             0.968      0.958     ~0.999
+SVM (RBF)                 0.968      0.973     ~0.999
+
+Note: Activity-ID based labeling yielded near-perfect scores (≥0.999), indicating linear separability — not realistic injury risk modeling. The data-driven approach (motion intensity threshold) produces more meaningful results.
+
+Notebook 02 — Multi-Sensor Fusion Classifier (PAMAP2)
+Classifies activity intensity into 3 classes using fused sensor features:
+
+Label         Class                     Description
+0             Rest                      Lying, sitting
+1             Physical Activity         Walking, standing, climbing
+2             Intense Physical Activity Running, cycling, rope jumping
+
+Sensors Used:
+Sensor                          Status                  Features
+IMU (accelerometer + gyroscope) Real (PAMAP2)           Mean, std, energy of vector magnitude
+Heart Rate                      Real (PAMAP2)           Mean, std
+Temperature                     Synthetic (temporary)   Mean skin temperature
+EMG                             Synthetic (temporary)   RMS, MAV, waveform length
+
+Feature Extraction: Sliding window (size=200, step=100) over raw sensor streams.
+Model: Random Forest (200 trees, class-weight balanced)
+Results: Accuracy = 1.0 on held-out test set (20%) — classes are well-separated with the current feature set.
+
+Notebook 03 — Real Sensor Inference
+Inference pipeline skeleton for live sensor data. Loads a trained model and runs predictions on windowed CSV input from real hardware sensors.
+Expected input files:
+data/sensors/imu.csv      # columns: ax, ay, az, gx, gy, gz
+data/sensors/hr.csv       # columns: hr
+data/sensors/temp.csv     # columns: temp
+data/sensors/emg.csv      # columns: emg
+
+Setup
+Requirements
+pip install numpy pandas scikit-learn matplotlib joblib
+
+Datasets
+
+PAMAP2 — Download from UCI Repository, place under data/raw/PAMAP2_Dataset/Protocol/
+UCI HAR — Download from UCI Repository, place under data/raw/UCI HAR Dataset/
+
+Key Design Decisions
+
+Windowed features are used instead of raw time series to reduce noise and capture temporal patterns over 2-second windows.
+Synthetic EMG/temperature are placeholder features generated from label distributions — these will be replaced with real prototype sensor data in a future phase.
+Data-driven risk labeling (percentile threshold on motion features) is preferred over activity-ID based labels for injury risk, as the latter is trivially separable.
+
+Roadmap
+
+ Replace synthetic EMG and temperature with real wearable sensor readings
+ Expand to multiple PAMAP2 subjects (currently subject101 only)
+ Add LSTM / time-series model for sequential modeling
+ Deploy inference pipeline to edge device (e.g., Raspberry Pi / ESP32)
+ Build real-time dashboard for activity monitoring
+
+References
+
+Reiss, A. & Stricker, D. (2012). Introducing a New Benchmarked Dataset for Activity Monitoring. ISWC.
+Anguita, D. et al. (2013). A Public Domain Dataset for Human Activity Recognition Using Smartphones. ESANN.
