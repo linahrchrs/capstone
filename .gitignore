@@ -208,3 +208,4 @@ __marimo__/
 
 # Ignore raw data
 ML-pipeline/data/raw/
+models/
