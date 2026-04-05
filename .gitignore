@@ -14,6 +14,43 @@ __pycache__/
 .env
 .envrc
 .venv
+myenv/# =========================
+# Python default
+# =========================
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# =========================
+# Virtual environments
+# =========================
+.env
+.envrc
+.venv
+myenv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# =========================
+# Packaging / build
+# =========================
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
 venv/
 env/
 ENV/
@@ -101,11 +138,11 @@ db.sqlite3-journal
 ML-pipeline/data/raw/
 data/raw/
 
-# Processed datasets (optional)
+# Processed datasets 
 data/processed/
 *.csv
 
-# Models (VERY IMPORTANT)
+# Models 
 models/
 *.pkl
 *.h5
