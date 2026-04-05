@@ -1,6 +1,6 @@
 import serial
 import time
-from read_imu import parse_imu
+from ml_pipeline.src.parsers.read_imu import parse_imu
 
 SERIAL_PORT = "/dev/ttyUSB0"  # adjust if needed
 BAUD_RATE = 115200

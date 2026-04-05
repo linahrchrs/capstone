@@ -5,7 +5,7 @@ from datetime import datetime
 
 from bleak import BleakClient, BleakScanner
 
-from serial_listener import start_serial, read_line
+from ml_pipeline.src.acquisition.serial_listener import start_serial, read_line
 
 # ---------- Arduino ----------
 PORT = "/dev/ttyUSB0"
