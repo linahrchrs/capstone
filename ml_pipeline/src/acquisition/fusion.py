@@ -16,7 +16,7 @@ HR_CHAR_UUID = "00002a37-0000-1000-8000-00805f9b34fb"
 DEVICE_NAME_HINT = "HR"
 
 # ---------- Output ----------
-CSV_FILE = "fused_data.csv"
+CSV_FILE = "ml_pipeline/data/raw/rest/rest1.csv"
 
 latest_hr = None
 
