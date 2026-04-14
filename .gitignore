@@ -135,9 +135,14 @@ db.sqlite3-journal
 # =========================
 
 # Raw sensor data (Raspberry Pi)
+<<<<<<< HEAD
 ML-pipeline/data/raw/
 ml_pipeline/data/raw/
 data/raw/ 
+=======
+#ml_pipeline/data/raw/
+#data/raw/
+>>>>>>> 7d523e2 (recorded all necessary data)
 
 # Processed datasets 
 data/processed/
