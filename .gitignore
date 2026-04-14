@@ -137,8 +137,8 @@ db.sqlite3-journal
 # Raw sensor data (Raspberry Pi)
 <<<<<<< HEAD
 ML-pipeline/data/raw/
-ml_pipeline/data/raw/
-data/raw/ 
+#ml_pipeline/data/raw/
+#data/raw/ 
 =======
 #ml_pipeline/data/raw/
 #data/raw/
