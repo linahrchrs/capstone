@@ -1,32 +1,10 @@
-# =========================
 # Python default
-# =========================
 __pycache__/
 *.py[codz]
 *$py.class
-
-# C extensions
 *.so
 
-# =========================
 # Virtual environments
-# =========================
-.env
-.envrc
-.venv
-myenv/# =========================
-# Python default
-# =========================
-__pycache__/
-*.py[codz]
-*$py.class
-
-# C extensions
-*.so
-
-# =========================
-# Virtual environments
-# =========================
 .env
 .envrc
 .venv
@@ -37,29 +15,7 @@ ENV/
 env.bak/
 venv.bak/
 
-# =========================
 # Packaging / build
-# =========================
-.Python
-build/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
-
-# =========================
-# Packaging / build
-# =========================
 .Python
 build/
 dist/
@@ -77,17 +33,13 @@ wheels/
 *.egg
 MANIFEST
 
-# =========================
 # Logs & temp
-# =========================
 *.log
 logs/
 *.tmp
 *.temp
 
-# =========================
 # Testing / coverage
-# =========================
 htmlcov/
 .tox/
 .nox/
@@ -97,64 +49,37 @@ htmlcov/
 .pytest_cache/
 .hypothesis/
 
-# =========================
 # Jupyter
-# =========================
 .ipynb_checkpoints/
 
-# =========================
 # IDEs
-# =========================
 .vscode/
 .idea/
 .spyderproject
 .spyproject
 
-# =========================
 # Type checkers / linters
-# =========================
 .mypy_cache/
 .pyre/
 .pytype/
 .ruff_cache/
 
-# =========================
 # OS files
-# =========================
 .DS_Store
 Thumbs.db
 
-# =========================
 # Database / local files
-# =========================
 db.sqlite3
 db.sqlite3-journal
 
-# =========================
-# Project-specific (IMPORTANT FOR YOU)
-# =========================
-
-# Raw sensor data (Raspberry Pi)
-<<<<<<< HEAD
-ML-pipeline/data/raw/
-#ml_pipeline/data/raw/
-#data/raw/ 
-=======
-#ml_pipeline/data/raw/
-#data/raw/
->>>>>>> 7d523e2 (recorded all necessary data)
-
-# Processed datasets 
+# Processed datasets
 data/processed/
-*.csv
 
-# Models 
+# Models
 models/
 *.pkl
 *.h5
 *.pt
-
-# Serialized / checkpoints
 *.joblib
 checkpoints/
 
@@ -162,7 +87,7 @@ checkpoints/
 sensor/logs/
 *.out
 
-# Audio outputs (your music generation)
+# Audio outputs
 outputs/
 *.wav
 *.mp3
@@ -172,9 +97,7 @@ outputs/
 .streamlit/
 .cache/
 
-# =========================
 # Misc
-# =========================
 *.manifest
 *.spec
 pip-log.txt
