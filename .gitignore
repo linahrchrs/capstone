@@ -72,8 +72,20 @@ Thumbs.db
 db.sqlite3
 db.sqlite3-journal
 
+# Raw datasets
+
+ML-pipeline/data/raw/
+ML-pipeline/data/raw/UCI HAR Dataset/
+ML-pipeline/data/raw/PAMAP2_Dataset/
+ML-pipeline/data/raw/WESAD/
+ml_pipeline/data/raw/UCI HAR Dataset/
+ml_pipeline/data/raw/PAMAP2_Dataset/
+ml_pipeline/data/raw/WESAD/
+
+
 # Processed datasets
-data/processed/
+ml_pipeline/data/processed/
+ML-pipeline/data/processed/ 
 
 # Models
 models/
