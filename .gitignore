@@ -99,11 +99,11 @@ checkpoints/
 sensor/logs/
 *.out
 
-# Audio outputs
-outputs/
-*.wav
-*.mp3
-*.mid
+# # Audio outputs
+# outputs/
+# *.wav
+# *.mp3
+# *.mid
 
 # Streamlit / cache
 .streamlit/
