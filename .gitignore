@@ -34,8 +34,8 @@ wheels/
 MANIFEST
 
 # Logs & temp
-*.log
-logs/
+#*.log
+#logs/
 *.tmp
 *.temp
 

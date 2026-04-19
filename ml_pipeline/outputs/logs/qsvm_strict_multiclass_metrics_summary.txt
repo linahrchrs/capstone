@@ -1,0 +1,114 @@
+Strict Multiclass Benchmark: QSVM vs RF vs SVM
+========================================================================
+
+Selected features:
+hr_mean, temp_mean, emg_rms, acc_mag_mean
+
+Sampling strategy:
+Maximum 6 windows per file
+
+QSVM file-by-file results:
+                                    test_file  n_test_windows  accuracy
+ moderate/moderate_stairs_20260411_224148.csv               6  0.166667
+   intense/intense_squats_20260411_223205.csv               6  0.166667
+moderate/moderate_walking_20260407_120447.csv               6  0.000000
+moderate/moderate_walking_20260417_151525.csv               6  1.000000
+  intense/intense_running_20260414_195242.csv               6  0.333333
+   intense/intense_squats_20260417_153856.csv               6  1.000000
+moderate/moderate_walking_20260417_150822.csv               6  0.500000
+  intense/intense_running_20260417_160438.csv               6  1.000000
+ moderate/moderate_stairs_20260417_163918.csv               6  0.333333
+                rest/rest_20260417_152938.csv               6  1.000000
+   intense/intense_squats_20260417_154922.csv               6  0.833333
+       rest/rest_stressed_20260406_170652.csv               6  0.000000
+  intense/intense_running_20260417_162157.csv               6  0.500000
+ moderate/moderate_stairs_20260417_164326.csv               6  0.500000
+                rest/rest_20260417_152340.csv               6  1.000000
+
+Mean QSVM leave-one-file-out accuracy:
+0.5555555555555555
+
+QSVM Classification Report:
+              precision    recall  f1-score   support
+
+        rest       0.63      0.67      0.65        18
+    moderate       0.44      0.42      0.43        36
+     intense       0.62      0.64      0.63        36
+
+    accuracy                           0.56        90
+   macro avg       0.56      0.57      0.57        90
+weighted avg       0.55      0.56      0.55        90
+
+
+RF file-by-file results:
+                                    test_file  n_test_windows  accuracy
+ moderate/moderate_stairs_20260411_224148.csv               6  0.500000
+   intense/intense_squats_20260411_223205.csv               6  1.000000
+moderate/moderate_walking_20260407_120447.csv               6  0.000000
+moderate/moderate_walking_20260417_151525.csv               6  0.833333
+  intense/intense_running_20260414_195242.csv               6  0.000000
+   intense/intense_squats_20260417_153856.csv               6  1.000000
+moderate/moderate_walking_20260417_150822.csv               6  0.666667
+  intense/intense_running_20260417_160438.csv               6  1.000000
+ moderate/moderate_stairs_20260417_163918.csv               6  0.666667
+                rest/rest_20260417_152938.csv               6  1.000000
+   intense/intense_squats_20260417_154922.csv               6  1.000000
+       rest/rest_stressed_20260406_170652.csv               6  0.000000
+  intense/intense_running_20260417_162157.csv               6  0.000000
+ moderate/moderate_stairs_20260417_164326.csv               6  0.333333
+                rest/rest_20260417_152340.csv               6  1.000000
+
+Mean RF leave-one-file-out accuracy:
+0.6
+
+RF Classification Report:
+              precision    recall  f1-score   support
+
+        rest       0.63      0.67      0.65        18
+    moderate       0.50      0.50      0.50        36
+     intense       0.69      0.67      0.68        36
+
+    accuracy                           0.60        90
+   macro avg       0.61      0.61      0.61        90
+weighted avg       0.60      0.60      0.60        90
+
+
+SVM file-by-file results:
+                                    test_file  n_test_windows  accuracy
+ moderate/moderate_stairs_20260411_224148.csv               6  0.500000
+   intense/intense_squats_20260411_223205.csv               6  1.000000
+moderate/moderate_walking_20260407_120447.csv               6  0.166667
+moderate/moderate_walking_20260417_151525.csv               6  0.833333
+  intense/intense_running_20260414_195242.csv               6  0.000000
+   intense/intense_squats_20260417_153856.csv               6  1.000000
+moderate/moderate_walking_20260417_150822.csv               6  0.333333
+  intense/intense_running_20260417_160438.csv               6  0.833333
+ moderate/moderate_stairs_20260417_163918.csv               6  0.166667
+                rest/rest_20260417_152938.csv               6  1.000000
+   intense/intense_squats_20260417_154922.csv               6  0.833333
+       rest/rest_stressed_20260406_170652.csv               6  0.000000
+  intense/intense_running_20260417_162157.csv               6  0.333333
+ moderate/moderate_stairs_20260417_164326.csv               6  0.333333
+                rest/rest_20260417_152340.csv               6  1.000000
+
+Mean SVM leave-one-file-out accuracy:
+0.5555555555555555
+
+SVM Classification Report:
+              precision    recall  f1-score   support
+
+        rest       0.48      0.67      0.56        18
+    moderate       0.47      0.39      0.42        36
+     intense       0.69      0.67      0.68        36
+
+    accuracy                           0.56        90
+   macro avg       0.54      0.57      0.55        90
+weighted avg       0.56      0.56      0.55        90
+
+
+Comparison Table:
+   Metric     QSVM  Random Forest      SVM
+ Accuracy 0.555556       0.600000 0.555556
+Precision 0.564792       0.605764 0.544127
+   Recall 0.574074       0.611111 0.574074
+ F1-score 0.569119       0.608235 0.552813

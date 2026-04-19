@@ -1,0 +1,34 @@
+SVM Strict Evaluation Results (Leave-One-File-Out)
+============================================================
+
+File-by-file results:
+                                    test_file  n_test_windows  accuracy
+  intense/intense_running_20260414_195242.csv              36  0.000000
+  intense/intense_running_20260417_160438.csv              28  0.928571
+  intense/intense_running_20260417_162157.csv              31  0.870968
+   intense/intense_squats_20260411_223205.csv               9  0.000000
+   intense/intense_squats_20260417_153856.csv               9  1.000000
+   intense/intense_squats_20260417_154922.csv              10  0.900000
+ moderate/moderate_stairs_20260411_224148.csv              12  0.000000
+ moderate/moderate_stairs_20260417_163918.csv              18  0.333333
+ moderate/moderate_stairs_20260417_164326.csv              13  0.307692
+moderate/moderate_walking_20260407_120447.csv              33  1.000000
+moderate/moderate_walking_20260417_150822.csv              36  1.000000
+moderate/moderate_walking_20260417_151525.csv              36  1.000000
+                rest/rest_20260417_152340.csv              31  1.000000
+                rest/rest_20260417_152938.csv              30  1.000000
+       rest/rest_stressed_20260406_170652.csv              34  0.617647
+
+Mean leave-one-file-out accuracy:
+0.663880791357072
+
+Classification report:
+              precision    recall  f1-score   support
+
+        rest       1.00      0.86      0.93        95
+    moderate       0.64      0.78      0.70       148
+     intense       0.68      0.58      0.63       123
+
+    accuracy                           0.73       366
+   macro avg       0.77      0.74      0.75       366
+weighted avg       0.75      0.73      0.73       366

@@ -1,0 +1,45 @@
+Baseline Evaluation Results (Random Train/Test Split)
+============================================================
+
+Random Forest Accuracy:
+0.9835164835164835
+
+Random Forest Classification Report:
+              precision    recall  f1-score   support
+
+        rest       1.00      1.00      1.00        47
+    moderate       0.97      0.99      0.98        74
+     intense       0.98      0.97      0.98        61
+
+    accuracy                           0.98       182
+   macro avg       0.99      0.98      0.99       182
+weighted avg       0.98      0.98      0.98       182
+
+Random Forest Confusion Matrix:
+               pred_rest  pred_moderate  pred_intense
+true_rest             47              0             0
+true_moderate          0             73             1
+true_intense           0              2            59
+
+SVM Accuracy:
+0.9945054945054945
+
+SVM Classification Report:
+              precision    recall  f1-score   support
+
+        rest       1.00      1.00      1.00        47
+    moderate       0.99      1.00      0.99        74
+     intense       1.00      0.98      0.99        61
+
+    accuracy                           0.99       182
+   macro avg       1.00      0.99      1.00       182
+weighted avg       0.99      0.99      0.99       182
+
+SVM Confusion Matrix:
+               pred_rest  pred_moderate  pred_intense
+true_rest             47              0             0
+true_moderate          0             74             0
+true_intense           0              1            60
+
+Test Set Size:
+182

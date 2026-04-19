@@ -1,0 +1,51 @@
+QSVM Binary Benchmark: Rest vs Active
+============================================================
+
+Selected features:
+hr_mean, temp_mean, emg_rms, acc_mag_mean
+
+QSVM Accuracy:
+0.9666666666666667
+
+QSVM Classification Report:
+              precision    recall  f1-score   support
+
+        rest       0.94      1.00      0.97        15
+      active       1.00      0.93      0.97        15
+
+    accuracy                           0.97        30
+   macro avg       0.97      0.97      0.97        30
+weighted avg       0.97      0.97      0.97        30
+
+Random Forest Accuracy:
+0.9666666666666667
+
+Random Forest Classification Report:
+              precision    recall  f1-score   support
+
+        rest       0.94      1.00      0.97        15
+      active       1.00      0.93      0.97        15
+
+    accuracy                           0.97        30
+   macro avg       0.97      0.97      0.97        30
+weighted avg       0.97      0.97      0.97        30
+
+SVM Accuracy:
+0.9
+
+SVM Classification Report:
+              precision    recall  f1-score   support
+
+        rest       0.83      1.00      0.91        15
+      active       1.00      0.80      0.89        15
+
+    accuracy                           0.90        30
+   macro avg       0.92      0.90      0.90        30
+weighted avg       0.92      0.90      0.90        30
+
+Comparison Table:
+   Metric     QSVM  Random Forest      SVM
+ Accuracy 0.966667       0.966667 0.900000
+Precision 0.968750       0.968750 0.916667
+   Recall 0.966667       0.966667 0.900000
+ F1-score 0.966630       0.966630 0.898990
