@@ -10,25 +10,26 @@ File-by-file results:
    intense/intense_squats_20260417_153856.csv               9  1.000000
    intense/intense_squats_20260417_154922.csv              10  0.900000
  moderate/moderate_stairs_20260411_224148.csv              12  0.000000
- moderate/moderate_stairs_20260417_163918.csv              18  0.333333
+ moderate/moderate_stairs_20260417_163918.csv              18  0.444444
  moderate/moderate_stairs_20260417_164326.csv              13  0.307692
 moderate/moderate_walking_20260407_120447.csv              33  1.000000
 moderate/moderate_walking_20260417_150822.csv              36  1.000000
 moderate/moderate_walking_20260417_151525.csv              36  1.000000
                 rest/rest_20260417_152340.csv              31  1.000000
                 rest/rest_20260417_152938.csv              30  1.000000
-       rest/rest_stressed_20260406_170652.csv              34  0.617647
+                rest/rest_20260419_212016.csv              29  0.931034
+                rest/rest_20260419_212846.csv              30  1.000000
 
 Mean leave-one-file-out accuracy:
-0.663880791357072
+0.7114194003376428
 
 Classification report:
               precision    recall  f1-score   support
 
-        rest       1.00      0.86      0.93        95
-    moderate       0.64      0.78      0.70       148
-     intense       0.68      0.58      0.63       123
+        rest       1.00      0.98      0.99       120
+    moderate       0.68      0.79      0.73       148
+     intense       0.70      0.58      0.63       123
 
-    accuracy                           0.73       366
-   macro avg       0.77      0.74      0.75       366
-weighted avg       0.75      0.73      0.73       366
+    accuracy                           0.78       391
+   macro avg       0.79      0.78      0.79       391
+weighted avg       0.78      0.78      0.78       391
