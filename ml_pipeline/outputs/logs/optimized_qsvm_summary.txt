@@ -1,0 +1,56 @@
+
+QSVM Optimization Summary
+
+This notebook explored multiple preprocessing techniques, encoding techniques,
+entanglement strategies, and circuit depths for multiclass wearable activity classification.
+
+Tested preprocessing methods:
+- StandardScaler
+- MinMaxScaler
+- RobustScaler
+- Normalizer
+
+Tested feature reduction methods:
+- PCA with 2, 3, and 4 components
+- SelectKBest with 2, 3, and 4 selected features
+
+Tested quantum encoding methods:
+- ZFeatureMap
+- ZZFeatureMap
+- PauliFeatureMap with Z
+- PauliFeatureMap with Z and ZZ
+
+Tested entanglement strategies:
+- Linear
+- Circular
+- Full
+
+Tested circuit repetitions:
+- reps = 1
+- reps = 2
+
+Best QSVM configuration:
+Scaler: dual_standard_minmax
+Reducer: benchmark_4
+Encoding: zz
+Entanglement: linear
+Repetitions: 1
+
+Best QSVM performance:
+Accuracy: 0.7422
+Precision: 0.7549
+Recall: 0.7639
+F1-score: 0.7590
+Training time: 1012.42 seconds
+
+Final comparison:
+        model               scaler     reducer  encoding entanglement reps  accuracy  precision   recall       f1   time_sec
+Random Forest dual_standard_minmax benchmark_4 classical         none none  0.718750   0.757748 0.750000 0.744568   6.371656
+          SVM dual_standard_minmax benchmark_4 classical         none none  0.750000   0.777778 0.777778 0.777778   0.154607
+         QSVM dual_standard_minmax benchmark_4        zz       linear    1  0.742188   0.754866 0.763889 0.759000 777.786438
+
+Conclusion:
+The results show that QSVM performance is sensitive to preprocessing,
+encoding, entanglement, and circuit depth. Classical ML remains more practical
+for immediate deployment, but the optimized QSVM demonstrates the potential of
+quantum kernels for wearable biosignal classification.
